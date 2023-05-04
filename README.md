@@ -34,6 +34,7 @@ ng generate @angular/material:navigation nav
 ng generate @angular/material:dashboard dash
 ng generate @angular/cdk:drag-drop dragNdrop
 Testing
+ng test --include "app/services/shopping-cart.service.spec.ts"
 Http-service
 angular-basic\getfood\src\app\services\http-service.service.ts
 
