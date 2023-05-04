@@ -1,0 +1,33 @@
+<!--dash.component.html-->
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <div *ngIf="managerMessage && managerMessage.length > 0">
+    <p>The manager says: {{managerMessage}}</p>
+  </div>
+  <div>
+    <p>You are the manager. You can write a nice message to all your employees. The message will be visible immediately</p>
+    <input [(ngModel)]="managerMessage">
+  </div>
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <!--Mini Cards-->
+    <mat-grid-tile *ngFor="let i of [1, 2, 3, 4]" [colspan]="( cardLayout | async )?.miniCard.cols"
+      [rowspan]="( cardLayout | async )?.miniCard.rows">
+      <app-card title="Card {{i}}" (removed)="remove($event)"><div>Mini Card Content Here</div></app-card>
+    </mat-grid-tile>
+    <!--Charts-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Product Sales">
+         <app-dynamic-charts></app-dynamic-charts>
+      </app-card>
+   </mat-grid-tile>
+   <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card appDropUpload (fileDropped)="fileDropped($event)" (folderDropped)="folderDropped($event)" title="Sales Reports">
+        <div *ngFor="let file of fileList">{{file}}</div>
+      </app-card>
+   </mat-grid-tile>
+   <mat-grid-tile [colspan]="( cardLayout | async )?.chart.cols" [rowspan]="( cardLayout | async )?.chart.rows">
+      <app-card title="Online Store Sessions by Traffic Source">
+      </app-card>
+   </mat-grid-tile>
+  </mat-grid-list>
+ </div>

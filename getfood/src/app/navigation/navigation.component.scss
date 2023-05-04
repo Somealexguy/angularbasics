@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.top-bar {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: end;
+
+  .title {
+    margin: auto 0;
+  }
+
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.navigation-checkout-slot {
+  width: 48px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

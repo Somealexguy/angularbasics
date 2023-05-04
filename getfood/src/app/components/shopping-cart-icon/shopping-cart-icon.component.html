@@ -1,0 +1,3 @@
+<button (click)="openShoppingCart()" *ngIf="(items$ | async).length > 0" mat-icon-button matBadeColor="primary" matBadgePosition="after below" [matBadge]="itemCount">
+  <fa-icon [icon]="icon"></fa-icon>
+</button>

@@ -1,0 +1,14 @@
+main{
+    min-height: 100vh;
+    height: 100%;
+    margin: 1em;
+}
+.app-chart{
+    max-height: 250px;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

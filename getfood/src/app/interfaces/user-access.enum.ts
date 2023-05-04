@@ -1,0 +1,1 @@
+export enum AccessLevel { User, Admin }
